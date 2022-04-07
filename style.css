@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 98vh;
     background-image: url(assets/background-training.jpg);
     background-repeat: no-repeat;
     background-position: center;
