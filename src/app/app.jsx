@@ -6,6 +6,7 @@ import { Link, Outlet } from "react-router-dom";
 export default function App() {
   return (
     <div>
+      <header>
       <h1>MuskelMat</h1>
       <nav
         style={{
@@ -13,12 +14,14 @@ export default function App() {
           paddingBottom: "1rem",
         }}
       >
-        <Link to="/recipes">Recept</Link> |{" "}
-        <Link to="/savedrecipes">Sparade Recept</Link> |{" "}
-        <Link to="/weeklymenu">Veckomatsedel</Link> |{" "}
-        <Link to="/contact">Kontakt</Link> |{" "}
+        <Link className="link" to="/recipes">Recept</Link> |{" "}
+        <Link className="link" to="/savedrecipes">Sparade Recept</Link> |{" "}
+        <Link className="link" to="/weeklymenu">Veckomatsedel</Link> |{" "}
+        <Link className="link" to="/contact">Kontakt</Link> |{" "}
+        <Link className="link" to="/calculatemenu">Få din Veckomatsedel</Link> |{" "}
       </nav>
       <Outlet />
+      </header>
     </div>
   );
 }

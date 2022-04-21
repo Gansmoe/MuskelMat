@@ -10,15 +10,17 @@ import Recipes from "./routes/recipes";
 import Recipe from './routes/recipe';
 import SavedRecipes from "./routes/savedrecipes";
 import WeeklyMenu from "./routes/weeklymenu";
+import CalculateMenu from './routes/CalculateMenu';
 
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
+    <div className='route'>
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App />}>
-                <Route path="contact" element={<Contact />} />
+                <Route className="route" path="contact" element={<Contact />} />
                 <Route path="recipes" element={<Recipes />}>
                     <Route
                         index
@@ -32,6 +34,7 @@ root.render(
                 </Route>
                 <Route path="savedrecipes" element={<SavedRecipes />} />
                 <Route path="weeklymenu" element={<WeeklyMenu />} />
+                <Route path="calculatemenu" element={<CalculateMenu />} />
                 <Route
                     path="*"
                     element={
@@ -43,4 +46,5 @@ root.render(
             </Route>
         </Routes>
     </BrowserRouter>
+    </div>
 )

@@ -34,6 +34,13 @@ let recipes = [
         protein: 48,
         instructions: "Stek köttfärs och koka riset."
     },
+    {
+        name: "Fiskgryta",
+        number: 6,
+        kcal: 421,
+        protein: 30,
+        instructions: "Blanda passerade tomater med creme fraiche och fiskbuljong, tillsätt fisken och koka potatis till."
+    },
 
 ];
 

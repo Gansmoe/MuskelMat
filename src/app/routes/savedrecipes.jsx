@@ -4,21 +4,31 @@ import React from "react";
 export default class SavedRecipes extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            savedRecipes: JSON.parse(localStorage.getItem("Saved recipes")),
+            foo: false,
+        };
+    }
+
+
+
+    deleteLocalStorage = () => {
+        localStorage.removeItem("Saved recipes");
+        this.setState({ savedRecipes: []})
+        this.state.savedRecipes = [];
+
     }
 
     render() {
-        const data = localStorage.getItem("Saved recipes");
-        const savedRecipes = JSON.parse(data);
-
-        console.log(savedRecipes);
         return (
             <main style={{ padding: "1rem 0" }}>
             <h2>Sparade Recept</h2>
-                {(savedRecipes === null)
+                {(this.state.savedRecipes === null)
                     ?
                     <p>Här var det tomt</p>
                     :
-                    <WriteRecipes recipes={savedRecipes}/>
+                    <><WriteRecipes recipes={this.state.savedRecipes} />
+                    <button onClick={this.deleteLocalStorage}>Töm sparade recept!</button></>
                 }
                 
 
@@ -27,16 +37,11 @@ export default class SavedRecipes extends React.Component {
     }
 }
 
-class WriteRecipes extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-    render() {
+function WriteRecipes(props) {
+
         return (
-            this.props.recipes.map((recipe) => (
+            props.recipes.map((recipe) => (
                 <div key={recipe.number}><p>{recipe.name}</p></div>
             ))
         )
-
-    }
 }

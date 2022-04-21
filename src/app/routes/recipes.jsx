@@ -8,7 +8,6 @@ import { getRecipes } from "../data/mockdata.js";
 
 export default function Recipes() {
   let recipes = getRecipes();
-  console.log(recipes);
   let [searchParams, setSearchParams] = useSearchParams();
   return (
     <div style={{ display: "flex" }}>
