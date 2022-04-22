@@ -31,10 +31,6 @@ body {
     border-radius: 3px;
 }
 
-.menu>div {
-    align-self: center;
-}
-
 .recipesNav {
     border-right: solid 1px;
     padding: 1rem;
@@ -91,35 +87,4 @@ header {
     background-color: rgb(168, 10, 10);
     border: 3px #333 solid;
     border-radius: 3px;
-}
-
-#footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: auto;
-    flex: 0;
-    background-color: #333;
-    color: white;
-    border: 3px rgb(168, 10, 10) solid;
-    border-radius: 3px;
-}
-
-#main {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-}
-
-#main>div {
-    opacity: 85%;
-    background-color: white;
-    border-radius: 3px;
-    width: 70%;
-    padding: 10px;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    box-shadow: 0 3px 6px #474747;
-
 }
