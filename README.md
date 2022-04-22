@@ -1,5 +1,9 @@
 # MuskelMat
 
+## Bundler
+
+-> Parcel is used for bundling and transpiling.
+
 ## Install
 
 -> Clone repo
