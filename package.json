@@ -1,0 +1,26 @@
+{
+  "name": "muskelmat",
+  "version": "1.0.0",
+  "description": "Projekt i Moderna Webbapplikationer",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx parcel index.html --open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gansmoe/MuskelMat.git"
+  },
+  "author": "Isac Gansmoe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gansmoe/MuskelMat/issues"
+  },
+  "homepage": "https://github.com/Gansmoe/MuskelMat#readme",
+  "devDependencies": {
+    "parcel": "^2.4.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0"
+  }
+}

@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 98vh;
+    background-image: url(../../assets/background-training.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(0, 0, 0);
+    margin: auto;
+    padding: 0.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+.route {
+    background-color: rgb(255, 255, 255);
+}
+
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    margin: 6px;
+    padding: 16px;
+    background-color: #333;
+    border: 3px rgb(168, 10, 10) solid;
+    border-radius: 3px;
+}
+
+.recipesNav {
+    border-right: solid 1px;
+    padding: 1rem;
+}
+
+.componentMain {
+    padding: 1rem;
+}
+
+.link {
+    background-color: rgb(32, 29, 29);
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    margin: 0.5rem;
+    border-radius: 5px;
+    transition: 0.5s ease-in-out;
+}
+
+.link:hover {
+    cursor: pointer;
+    background-color: rgb(241, 1, 1);
+    font-size: 120%;
+}
+
+
+.loading>h3 {
+    animation: rotation 2s infinite;
+    margin-left: 80px;
+}
+
+@keyframes rotation {
+    0% {
+        font-size: 120%
+    }
+    50% {
+        font-size: 80%;
+    }
+    100% {
+        font-size: 120%;
+    }
+}
+
+
+header>img {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+}
+
+header {
+    background-color: rgb(168, 10, 10);
+    border: 3px #333 solid;
+    border-radius: 3px;
+}
