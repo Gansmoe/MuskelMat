@@ -11,12 +11,7 @@ export default function Recipes() {
   let [searchParams, setSearchParams] = useSearchParams();
   return (
     <div style={{ display: "flex" }}>
-      <nav
-        style={{
-          borderRight: "solid 1px",
-          padding: "1rem",
-        }}
-      >
+      <nav className="recipesNav">
         <input
           value={searchParams.get("filter") || ""}
           onChange={(event) => {

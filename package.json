@@ -4,7 +4,7 @@
   "description": "Projekt i Moderna Webbapplikationer",
   "main": "index.js",
   "scripts": {
-    "start": "npx parcel index.html",
+    "start": "npx parcel index.html --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

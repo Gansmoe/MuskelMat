@@ -15,8 +15,7 @@ body {
 
 
 .route {
-    background-color: white;
-    opacity: 85%;
+    background-color: rgb(255, 255, 255);
 }
 
 
@@ -36,31 +35,59 @@ body {
     align-self: center;
 }
 
+.recipesNav {
+    border-right: solid 1px;
+    padding: 1rem;
+}
+
+.componentMain {
+    padding: 1rem;
+}
+
 .link {
-    background-color: rgb(168, 10, 10);
+    background-color: rgb(32, 29, 29);
     color: white;
     text-align: center;
     padding: 10px 16px;
     text-decoration: none;
     margin: 0.5rem;
     border-radius: 5px;
-    transition: transform 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 .link:hover {
     cursor: pointer;
     background-color: rgb(241, 1, 1);
+    font-size: 120%;
 }
 
 
-#header>img {
+.loading>h3 {
+    animation: rotation 2s infinite;
+    margin-left: 80px;
+}
+
+@keyframes rotation {
+    0% {
+        font-size: 120%
+    }
+    50% {
+        font-size: 80%;
+    }
+    100% {
+        font-size: 120%;
+    }
+}
+
+
+header>img {
     display: flex;
     margin-left: auto;
     margin-right: auto;
     width: 15%;
 }
 
-#header {
+header {
     background-color: rgb(168, 10, 10);
     border: 3px #333 solid;
     border-radius: 3px;

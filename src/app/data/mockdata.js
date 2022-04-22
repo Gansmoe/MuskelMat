@@ -50,6 +50,12 @@ export function getRecipes() {
 
 export function getRecipe(number) {
     return recipes.find(
-      (recipe) => recipe.number === number
+        (recipe) => recipe.number === number
     );
-  }
+}
+
+export function getRecipeByProtein(protein) {
+    return recipes.find(
+        (recipe) => recipe.protein === protein
+    );
+}

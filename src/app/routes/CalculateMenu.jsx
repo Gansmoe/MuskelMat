@@ -1,4 +1,8 @@
 import React from "react";
+import Recipes from "./recipes";
+import DataHandler from "../data/datahandler.js";
+import WriteRecipes from "../components/WriteRecipes";
+import Mockdata from "../data/mockdata.json";
 
 
 export default class CalculateMenu extends React.Component {
@@ -8,28 +12,45 @@ export default class CalculateMenu extends React.Component {
         this.state = {
             kcalInput: 0,
             proteinInput: 0,
+            recipeArray: [],
+            recipe: null,
+            mounted: false,
+            datarecept: null,
         }
+        console.log("Constructor", Mockdata);
+
     }
 
-    componentDidUpdate() {
-        console.log(this.state.kcalInput);
-        console.log(this.state.proteinInput);
-    }
-    onChangeKcal = (e) => {
-        this.setState({kcalInput: e.taget.value})
+    getData() {
+        setTimeout(() => {
+            this.setState({
+                datarecept: Mockdata,
+            }, () => console.log(this.state.datarecept))
+        }, 2000)
+    };
+
+    componentDidMount() {
+        this.getData();
+        console.log("Mount");
     }
 
-    onChangeProtein = (e) => {
-        this.setState({proteinInput: e.taget.value})
-    }
-    
+
     render() {
+        console.log("render");
         return (
-            <main style={{ padding: "1rem 0" }}>
+            <main className="componentMain">
                 <h2>Här fyller du i ditt kalori- och proteinbehov, sedan finns veckomatsedeln under "Veckomatsedel"</h2>
-                <input type="text" placeholder="Kalorier/dag" onChange={(e) => this.setState({kcalInput: e.target.value})}></input>
-                <input type="text" placeholder="Protein/dag" onChange={(e) => this.setState({proteinInput: e.target.value})}></input>
-                <button>Kör!</button>
+                <input type="number" placeholder="Kalorier/dag" onChange={(e) => this.setState({ kcalInput: e.target.value })}></input>
+                <input type="number" placeholder="Protein/dag" onChange={(e) => this.setState({ proteinInput: e.target.value })}></input>
+                {(this.state.datarecept === null)
+                    ?
+                    <div className="loading"><h3 >Laddar...</h3></div>
+                    :
+                    <WriteRecipes recipes={this.state.datarecept} />
+                }
+
+
+
             </main>
         );
     }
