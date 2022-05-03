@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import {
-    BrowserRouter,
+    HashRouter,
     Routes,
     Route,
 } from "react-router-dom";
@@ -17,7 +17,7 @@ const root = createRoot(container);
 
 root.render(
     <div className='route'>
-    <BrowserRouter>
+    <HashRouter>
         <Routes>
             <Route path="/" element={<App />}>
                 <Route path="contact" element={<Contact />} />
@@ -45,6 +45,6 @@ root.render(
                 />
             </Route>
         </Routes>
-    </BrowserRouter>
+    </HashRouter>
     </div>
 )
