@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   NavLink,
   Outlet,
@@ -9,6 +10,7 @@ import { getRecipes } from "../data/mockdata.js";
 export default function Recipes() {
   let recipes = getRecipes();
   let [searchParams, setSearchParams] = useSearchParams();
+
   return (
     <div style={{ display: "flex" }}>
       <nav className="recipesNav">
