@@ -116,3 +116,19 @@ header {
 .detailedRecipe {
  max-width: 25rem;
 }
+
+.logIn {
+    margin: auto;
+    max-width: 500px;
+    opacity: 100%;
+}
+
+.logIn>form {
+    padding: 1rem;
+}
+
+.logIn>form>input {
+    display: block;
+    padding: 1rem;
+    margin: 1rem;
+}

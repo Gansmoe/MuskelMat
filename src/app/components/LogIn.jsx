@@ -29,7 +29,7 @@ export default class LogIn extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="logIn">
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" placeholder="Användarnamn" value={this.state.username} onChange={this.handleChangeName}></input>
                     <input type="password" placeholder="Lösenord" value={this.state.password} onChange={this.handleChangePsw}></input>

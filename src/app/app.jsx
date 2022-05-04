@@ -15,7 +15,7 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div className="appDiv">
       {(loggedIn === true)
         ?
         <>
