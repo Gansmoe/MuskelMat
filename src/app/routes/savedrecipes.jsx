@@ -1,5 +1,5 @@
 import React from "react";
-import WriteRecipes from "../components/WriteRecipes.jsx";
+import WriteSavedRecipes from "../components/WriteSavedRecipes.jsx";
 
 
 export default class SavedRecipes extends React.Component {
@@ -26,7 +26,7 @@ export default class SavedRecipes extends React.Component {
                     ?
                     <p>Här var det tomt</p>
                     :
-                    <><WriteRecipes recipes={this.state.savedRecipes}/>
+                    <><WriteSavedRecipes recipes={this.state.savedRecipes}/>
                     <button onClick={this.deleteLocalStorage}>Töm sparade recept!</button></>
                 }
                 

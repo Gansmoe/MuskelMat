@@ -11,14 +11,13 @@ import Recipe from './routes/recipe';
 import SavedRecipes from "./routes/savedrecipes";
 import WeeklyMenu from "./routes/weeklymenu";
 import CalculateMenu from './routes/CalculateMenu';
+import LogIn from './components/LogIn.jsx';
 
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
     <>
-    
-    
     <div className='route'>
     <HashRouter>
         <Routes>
