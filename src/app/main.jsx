@@ -16,6 +16,9 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
+    <>
+    
+    
     <div className='route'>
     <HashRouter>
         <Routes>
@@ -47,4 +50,5 @@ root.render(
         </Routes>
     </HashRouter>
     </div>
+    </>
 )
