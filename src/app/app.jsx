@@ -1,18 +1,24 @@
 
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import bild from "../../assets/MuskelMat2.png";
 import CookieConsent from "react-cookie-consent";
 import LogIn from "./components/LogIn.jsx";
+
+
 
 
 let loggedIn = null;
 
 export default function App() {
 
+  const navigate = useNavigate();
+
   if (localStorage.getItem("loggedin")) {
     loggedIn = JSON.parse(localStorage.getItem("loggedin"));
   }
+
+
 
   return (
     <div className="appDiv">
@@ -27,6 +33,7 @@ export default function App() {
               <Link className="link" to="/weeklymenu">Veckomatsedel</Link>
               <Link className="link" to="/contact">Kontakt</Link>
               <Link className="link" to="/calculatemenu">Få din Veckomatsedel</Link>
+              <button onClick={()=> {localStorage.removeItem("loggedin"); navigate("/", {replace: true}); location.reload();}}>Logga ut</button>
             </nav>
           </header>
           <Outlet />
@@ -39,7 +46,7 @@ export default function App() {
             expires={1}
           >
             Vi bjuder på kakor!{" "}
-            <span style={{ fontSize: "10px" }}>Tänk på kalorierna bara!</span>
+            <span style={{ fontSize: "10px" }}>Tänk på kalorierna bara...</span>
           </CookieConsent>
           </>
         :

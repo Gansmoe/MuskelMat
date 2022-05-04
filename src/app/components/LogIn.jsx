@@ -20,10 +20,9 @@ export default class LogIn extends React.Component {
     }
 
 
-    handleSubmit = (event) => {
+    handleSubmit = () => {
         if (this.state.username === "User" && this.state.password === "Password") {
             this.setState({ loggedin: true }, () => localStorage.setItem("loggedin", JSON.stringify(this.state.loggedin)))
-
         }
     }
 
