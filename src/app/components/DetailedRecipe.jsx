@@ -22,7 +22,7 @@ export default class DetailedRecipe extends React.Component {
 
     render() {
         return (
-            <div key={this.props.recipeId}>
+            <div className="detailedRecipe" key={this.props.recipeId}>
                 {(this.state.done === false)
                 ?
                 <h4>Laddar...</h4>

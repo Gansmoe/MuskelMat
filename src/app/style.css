@@ -88,3 +88,31 @@ header {
     border: 3px #333 solid;
     border-radius: 3px;
 }
+
+.writeRecipe {
+    border-bottom: 3px #333 solid;
+    border-radius: 3px;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.writeRecipe>button {
+    background-color: rgb(32, 29, 29);
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    margin: 0.5rem;
+    border-radius: 5px;
+    transition: 0.5s ease-in-out;
+}
+
+.writeRecipe>button:hover {
+    cursor: pointer;
+    background-color: rgb(168, 10, 10);
+    font-size: 120%;
+}
+
+.detailedRecipe {
+ max-width: 25rem;
+}
