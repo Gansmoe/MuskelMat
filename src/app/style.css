@@ -54,26 +54,8 @@ body {
 .link:hover {
     cursor: pointer;
     background-color: rgb(241, 1, 1);
-    font-size: 120%;
 }
 
-
-.loading>h3 {
-    animation: rotation 2s infinite;
-    margin-left: 80px;
-}
-
-@keyframes rotation {
-    0% {
-        font-size: 120%
-    }
-    50% {
-        font-size: 80%;
-    }
-    100% {
-        font-size: 120%;
-    }
-}
 
 
 header>img {
@@ -88,6 +70,8 @@ header {
     border: 3px #333 solid;
     border-radius: 3px;
 }
+
+
 
 .writeRecipe {
     border-bottom: 3px #333 solid;
@@ -110,11 +94,10 @@ header {
 .writeRecipe>button:hover {
     cursor: pointer;
     background-color: rgb(168, 10, 10);
-    font-size: 120%;
 }
 
 .detailedRecipe {
- max-width: 25rem;
+    max-width: 25rem;
 }
 
 .logIn {
@@ -131,4 +114,24 @@ header {
     display: block;
     padding: 1rem;
     margin: 1rem;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    background-color: #333;
+    color: white;
+    border: 3px rgb(168, 10, 10) solid;
+    border-radius: 3px;
+}
+
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 600px) {
+    .writeRecipe>img {
+        width: 100%;
+        height: auto;
+    }
 }

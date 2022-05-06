@@ -1,6 +1,6 @@
 import React from "react";
 import WriteRecipes from "../components/WriteRecipes";
-import { getDataByNutrients } from "../data/apidata";
+import { getRecipesByNutrients } from "../data/apidata";
 
 
 export default class CalculateMenu extends React.Component {
@@ -21,7 +21,7 @@ export default class CalculateMenu extends React.Component {
 
     handleSubmit = (event) => {
         this.setState({ kcalInput: this.state.tempKcalInput, proteinInput: this.state.tempProteinInput }, async () => {
-            const updatedRecipes = await getDataByNutrients(this.state.proteinInput, this.state.kcalInput);
+            const updatedRecipes = await getRecipesByNutrients(this.state.proteinInput, this.state.kcalInput);
             this.setState({ datarecept: updatedRecipes });
         });
 

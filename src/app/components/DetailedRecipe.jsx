@@ -17,7 +17,7 @@ export default class DetailedRecipe extends React.Component {
 
     recipeInfo = async() =>{
         const data = await getDataRecipeInformation(this.props.recipeId);
-        this.setState({recipe: data}, async () => this.setState({done: true}, () => console.log(this.state.recipe + " " + this.state.done)));
+        this.setState({recipe: data}, async () => this.setState({done: true}));
     }
 
     render() {

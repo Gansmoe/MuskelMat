@@ -4,6 +4,7 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import bild from "../../assets/MuskelMat2.png";
 import CookieConsent from "react-cookie-consent";
 import LogIn from "./components/LogIn.jsx";
+import Footer from "./components/Footer.jsx"
 
 
 
@@ -33,7 +34,7 @@ export default function App() {
               <Link className="link" to="/weeklymenu">Veckomatsedel</Link>
               <Link className="link" to="/contact">Kontakt</Link>
               <Link className="link" to="/calculatemenu">Få din Veckomatsedel</Link>
-              <button onClick={()=> {localStorage.removeItem("loggedin"); navigate("/", {replace: true}); location.reload();}}>Logga ut</button>
+              <button onClick={() => { localStorage.removeItem("loggedin"); navigate("/", { replace: true }); location.reload(); }}>Logga ut</button>
             </nav>
           </header>
           <Outlet />
@@ -48,12 +49,14 @@ export default function App() {
             Vi bjuder på kakor!{" "}
             <span style={{ fontSize: "10px" }}>Tänk på kalorierna bara...</span>
           </CookieConsent>
-          </>
+          
+        </>
         :
 
         <LogIn />
-        
-  }
-  </div>
+
+      }
+      <Footer />
+    </div>
   );
 }
