@@ -1,7 +1,4 @@
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 98vh;
     background-image: url(../../assets/background-training.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -14,8 +11,12 @@ body {
 
 
 
-.route {
-    background-color: rgb(255, 255, 255);
+#root {
+    background-color: rgba(255, 255, 255, 0.589);
+    display: flex;
+    flex-direction: column;
+    min-height: 98vh;
+    
 }
 
 
@@ -54,26 +55,8 @@ body {
 .link:hover {
     cursor: pointer;
     background-color: rgb(241, 1, 1);
-    font-size: 120%;
 }
 
-
-.loading>h3 {
-    animation: rotation 2s infinite;
-    margin-left: 80px;
-}
-
-@keyframes rotation {
-    0% {
-        font-size: 120%
-    }
-    50% {
-        font-size: 80%;
-    }
-    100% {
-        font-size: 120%;
-    }
-}
 
 
 header>img {
@@ -88,6 +71,8 @@ header {
     border: 3px #333 solid;
     border-radius: 3px;
 }
+
+
 
 .writeRecipe {
     border-bottom: 3px #333 solid;
@@ -110,9 +95,44 @@ header {
 .writeRecipe>button:hover {
     cursor: pointer;
     background-color: rgb(168, 10, 10);
-    font-size: 120%;
 }
 
 .detailedRecipe {
- max-width: 25rem;
+    max-width: 25rem;
+}
+
+.logIn {
+    margin: auto;
+    max-width: 500px;
+    opacity: 100%;
+}
+
+.logIn>form {
+    padding: 1rem;
+}
+
+.logIn>form>input {
+    display: block;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    background-color: #333;
+    color: white;
+    border: 3px rgb(168, 10, 10) solid;
+    border-radius: 3px;
+}
+
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 600px) {
+    .writeRecipe>img {
+        width: 100%;
+        height: auto;
+    }
 }
