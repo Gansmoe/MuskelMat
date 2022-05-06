@@ -22,7 +22,7 @@ export default function App() {
 
 
   return (
-    <div className="appDiv">
+    <>
       {(loggedIn === true)
         ?
         <>
@@ -57,6 +57,6 @@ export default function App() {
 
       }
       <Footer />
-    </div>
+    </>
   );
 }

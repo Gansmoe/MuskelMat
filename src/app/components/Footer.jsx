@@ -5,11 +5,9 @@ export default class Footer extends React.Component {
 
     render() {
         return (
-            <div>
-                <footer className="footer">
-                    <p><strong>MuskelMat</strong> by Isac Gansmoe </p>
-                </footer>
-            </div>
+            <footer className="footer">
+                <p><strong>MuskelMat</strong> by Isac Gansmoe </p>
+            </footer>
         )
     }
 }

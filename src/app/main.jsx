@@ -18,7 +18,6 @@ const root = createRoot(container);
 
 root.render(
     <>
-    <div className='route'>
     <HashRouter>
         <Routes>
             <Route path="/" element={<App />}>
@@ -41,13 +40,12 @@ root.render(
                     path="*"
                     element={
                         <main style={{ padding: "1rem" }}>
-                            <p>There's nothing here!</p>
+                            <p>Här var det tomt!</p>
                         </main>
                     }
                 />
             </Route>
         </Routes>
     </HashRouter>
-    </div>
     </>
 )

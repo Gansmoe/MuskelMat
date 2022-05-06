@@ -6,7 +6,7 @@ export default class SavedRecipes extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            savedRecipes: JSON.parse(localStorage.getItem("Saved recipes")),
+            savedRecipes: [],
         };
     }
 
@@ -18,6 +18,9 @@ export default class SavedRecipes extends React.Component {
 
     }
 
+    componentDidMount() {
+        this.setState({savedRecipes: JSON.parse(localStorage.getItem("Saved recipes"))})
+    }
     render() {
         return (
             <main className="componentMain">
