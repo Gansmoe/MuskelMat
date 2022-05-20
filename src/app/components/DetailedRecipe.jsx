@@ -1,5 +1,6 @@
 import React from "react";
 import { getDataRecipeInformation } from "../data/apidata";
+import SavedRecipes from "../routes/savedrecipes";
 
 
 export default class DetailedRecipe extends React.Component {
@@ -8,7 +9,26 @@ export default class DetailedRecipe extends React.Component {
         this.state = {
             recipe: [],
             done: false,
+            savedWeeklyRecipes: [],
         }
+    }
+
+    saveRecipe = () => {
+        console.log("Kör saveRecipe");
+        if(localStorage.getItem("Saved weekly recipes")) {
+            this.state.savedWeeklyRecipes = JSON.parse(localStorage.getItem("Saved weekly recipes"));
+        }
+    
+        let check = this.state.savedWeeklyRecipes.some(
+            (obj) => obj.id === this.props.recipeId
+        );
+    
+        if (!check) {
+            this.state.savedWeeklyRecipes.push(this.props.recipeId);
+            localStorage.setItem("Saved weekly recipes",JSON.stringify(this.state.savedWeeklyRecipes));
+            this.setState({savedWeeklyRecipes: []}, () => console.log(this.state.savedWeeklyRecipes))
+        }
+    
     }
 
     componentDidMount(){
@@ -27,11 +47,12 @@ export default class DetailedRecipe extends React.Component {
                 ?
                 <h4>Laddar...</h4>
                 :
-                this.state.recipe.instructions
+                <>
+                {this.state.recipe.instructions}
+                <button onClick={() => this.saveRecipe()}>Spara recept</button>
+                </>
                 }
                 
-
-
             </div>
 
 

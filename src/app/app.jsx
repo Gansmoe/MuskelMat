@@ -37,19 +37,7 @@ export default function App() {
               <button onClick={() => { localStorage.removeItem("loggedin"); navigate("/", { replace: true }); location.reload(); }}>Logga ut</button>
             </nav>
           </header>
-          <Outlet />
-          <CookieConsent
-            location="bottom"
-            buttonText="Härligt, tack så mycket!"
-            cookieName="MuskelMatCookie"
-            style={{ background: "#2B373B", textAlign: "center", fontSize: "20px" }}
-            buttonStyle={{ color: "#4e503b", fontSize: "20px" }}
-            expires={1}
-          >
-            Vi bjuder på kakor!{" "}
-            <span style={{ fontSize: "10px" }}>Tänk på kalorierna bara...</span>
-          </CookieConsent>
-          
+          <Outlet />          
         </>
         :
 

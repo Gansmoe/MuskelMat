@@ -18,8 +18,9 @@ export default class CalculateMenu extends React.Component {
 
 
     handleSubmit = async (event) => {
-
+        console.log("Hejhej från submit");
         const updatedRecipes = await getRecipesByNutrients(this.state.proteinInput, this.state.kcalInput);
+        console.log({updatedRecipes});
         this.setState({ datarecept: updatedRecipes });
 
         event.preventDefault();
