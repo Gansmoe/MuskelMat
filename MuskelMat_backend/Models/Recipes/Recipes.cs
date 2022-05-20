@@ -5,7 +5,7 @@ namespace MuskelMat_backend.Models
 {
     public class Recipes : IRecipes
     {
-        public int Id { get; set; }
+        public int RecipesId { get; set; }
         public string Name { get; set; }
         public int Kcal { get; set; }
         public int Protein { get; set; }

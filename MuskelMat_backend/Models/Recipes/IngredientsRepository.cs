@@ -11,9 +11,9 @@ namespace MuskelMat_backend.Models
             _appDbContext = appDbContext;
         }
 
-        /* public async Task<IEnumerable<Ingredients>> AllIngredientsListAsync()
+        public async Task<IEnumerable<Ingredients>> AllIngredientsListAsync()
         {
                 return await _appDbContext.Ingredients.ToListAsync();
-        } */
+        }
     }
 }

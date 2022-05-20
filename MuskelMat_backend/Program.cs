@@ -15,7 +15,7 @@ options.UseSqlite(@"Data Source=C:\Users\Isac\Documents\Skola\Moderna Webbsystem
 
 builder.Services.AddScoped<IRecipesRepository, RecipesRepository>();
 builder.Services.AddScoped<IIngredientsRepository, IngredientsRepository>();
-
+ 
 builder.Services.AddCors(options => options.AddPolicy("AllowEverything", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
 
 var app = builder.Build();
@@ -28,6 +28,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowEverything");
 
 app.UseAuthorization();
 

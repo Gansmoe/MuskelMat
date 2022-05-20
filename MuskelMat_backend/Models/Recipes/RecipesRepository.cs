@@ -13,7 +13,7 @@ namespace MuskelMat_backend.Models
 
         public async Task<IEnumerable<Recipes>> AllRecipesListAsync()
         {
-                return await _appDbContext.Recipes.ToListAsync();
+                return await _appDbContext.Recipes.Include(i => i.Ingredients).ToListAsync();
         }
     }
 }
