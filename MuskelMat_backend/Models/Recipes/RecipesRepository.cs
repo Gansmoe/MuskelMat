@@ -1,4 +1,4 @@
-
+using Microsoft.EntityFrameworkCore;
 
 namespace MuskelMat_backend.Models
 {
@@ -11,12 +11,9 @@ namespace MuskelMat_backend.Models
             _appDbContext = appDbContext;
         }
 
-        public IEnumerable<Recipes> AllRecipes
+        public async Task<IEnumerable<Recipes>> AllRecipesListAsync()
         {
-            get
-            {
-                return _appDbContext.Recipes;
-            }
+                return await _appDbContext.Recipes.ToListAsync();
         }
     }
 }

@@ -1,11 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace MuskelMat_backend.Models
 {
     public class AppDbContext : DbContext
     {
         public DbSet<Recipes> Recipes { get; set; }
-        public DbSet<Ingredients> Ingredients { get; set; }
+        /* public DbSet<Ingredients> Ingredients { get; set; } */
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) => this.Database.EnsureCreated();
 
@@ -23,7 +24,13 @@ namespace MuskelMat_backend.Models
                 Kcal = 565,
                 Protein = 28,
                 MealType = "Lunch Middag",
-                Ingredients = {},
+                Ingredients = {},/* new List<Ingredients>
+                                {
+                                new Ingredients{Id = 1, RecipesId = 1, Name = "Pasta"},
+                                new Ingredients{Id = 2, RecipesId = 1, Name = "Tomatsås"},
+                                new Ingredients{Id = 3, RecipesId = 1, Name = "Rostade grönsaker"},
+                                new Ingredients{Id = 4, RecipesId = 1, Name = "Köttbullar"}
+                                }, */
             });
             builder.Entity<Recipes>().HasData(new Recipes
             {
@@ -32,7 +39,7 @@ namespace MuskelMat_backend.Models
                 Kcal = 625,
                 Protein = 38,
                 MealType = "Lunch Middag",
-                Ingredients = {},
+                Ingredients = { },
             });
             builder.Entity<Recipes>().HasData(new Recipes
             {
@@ -41,7 +48,7 @@ namespace MuskelMat_backend.Models
                 Kcal = 553,
                 Protein = 37,
                 MealType = "Lunch Middag",
-                Ingredients = {},
+                Ingredients = { },
             });
             builder.Entity<Recipes>().HasData(new Recipes
             {
@@ -50,9 +57,9 @@ namespace MuskelMat_backend.Models
                 Kcal = 529,
                 Protein = 30,
                 MealType = "Lunch Middag",
-                Ingredients = {},
+                Ingredients = { },
             });
-            builder.Entity<Recipes>().HasData(new Recipes
+            /* builder.Entity<Recipes>().HasData(new Recipes
             {
                 Id = 5,
                 Name = "",
@@ -275,7 +282,7 @@ namespace MuskelMat_backend.Models
                 Protein = ,
                 MealType = "",
                 Ingredients = {},
-            });
+            }); */
 
         }
 

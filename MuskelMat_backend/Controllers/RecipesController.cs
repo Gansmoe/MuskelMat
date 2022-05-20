@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MuskelMat_backend.Controllers
 {
+    [Route("api/recipes")]
     public class RecipesController : Controller
     {
         private readonly IRecipesRepository _recipesRepository;
@@ -11,6 +12,13 @@ namespace MuskelMat_backend.Controllers
         public RecipesController(IRecipesRepository recipesRepository)
         {
             _recipesRepository = recipesRepository;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Recipes>>> GetAllAsync()
+        {
+            var recipes = await _recipesRepository.AllRecipesListAsync();
+            return Ok(recipes);
         }
     }
 }

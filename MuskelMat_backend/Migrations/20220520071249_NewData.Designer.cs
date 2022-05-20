@@ -8,11 +8,11 @@ using MuskelMat_backend.Models;
 
 #nullable disable
 
-namespace MuskelMat_backend.DB
+namespace MuskelMat_backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220518115105_Initial")]
-    partial class Initial
+    [Migration("20220520071249_NewData")]
+    partial class NewData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,7 +26,6 @@ namespace MuskelMat_backend.DB
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("RecipesId")
@@ -48,6 +47,10 @@ namespace MuskelMat_backend.DB
                     b.Property<int>("Kcal")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("MealType")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -58,6 +61,40 @@ namespace MuskelMat_backend.DB
                     b.HasKey("Id");
 
                     b.ToTable("Recipes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Kcal = 565,
+                            MealType = "Lunch Middag",
+                            Name = "Köttbullar i tomatsås med rostade grönsaker",
+                            Protein = 28
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Kcal = 625,
+                            MealType = "Lunch Middag",
+                            Name = "Kalkonfilépasta med paprikapesto",
+                            Protein = 38
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Kcal = 553,
+                            MealType = "Lunch Middag",
+                            Name = "Kotlett med äpple och ingefära",
+                            Protein = 37
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Kcal = 529,
+                            MealType = "Lunch Middag",
+                            Name = "Renskavsgryta med gröna ärtor",
+                            Protein = 30
+                        });
                 });
 
             modelBuilder.Entity("MuskelMat_backend.Models.Ingredients", b =>
