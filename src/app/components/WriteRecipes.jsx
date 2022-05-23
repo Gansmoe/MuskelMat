@@ -33,17 +33,16 @@ export default class WriteRecipes extends React.Component {
                 <p>Kalorier per portion: {this.props.recipes.kcal}</p>
                 <p>Protein per portion: {this.props.recipes.protein}</p>
                 {/* <button onClick={() => this.setState({ show: true })}>Läs mer</button> */}
-                <ReadMoreButton status={this.state.status} onClick={this.eventHandler}> 
-                </ReadMoreButton>
+                
                 {(this.state.show === true)
                     ?
                     <>
                         <DetailedRecipe recipeId={this.props.recipes.recipesId} />
-                        <button onClick={() => this.setState({ show: false })}>Mindre</button>
                     </>
                     :
                     <p></p>
                 }
+                <ReadMoreButton status={this.state.status} onClick={this.eventHandler} />
             </div>
 
 

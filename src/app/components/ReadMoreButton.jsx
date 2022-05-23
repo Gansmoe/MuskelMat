@@ -5,7 +5,7 @@ export default class ReadMoreButton extends React.Component {
 
     render() {
         return (
-            <button>{this.props.status}</button>
+            <button onClick={this.props.onClick}>{this.props.status}</button>
         )
     }
 }
