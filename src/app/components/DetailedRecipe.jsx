@@ -48,7 +48,10 @@ export default class DetailedRecipe extends React.Component {
                 <h4>Laddar...</h4>
                 :
                 <>
-                {this.state.recipe.instructions}
+                <h4>Ingredienser: </h4>
+                {this.state.recipe.ingredients.map((ingredients) => (
+                    <p>{ingredients.name}</p>
+                ))}
                 <button onClick={() => this.saveRecipe()}>Spara recept</button>
                 </>
                 }

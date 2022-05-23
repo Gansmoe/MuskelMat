@@ -1,6 +1,7 @@
 import React from "react";
 import WriteRecipes from "../components/WriteRecipes";
 import { getRecipesByNutrients } from "../data/apidata";
+import { GetDailyRecipes } from "../data/MenuCalculator";
 
 
 export default class CalculateMenu extends React.Component {
@@ -22,6 +23,7 @@ export default class CalculateMenu extends React.Component {
         const updatedRecipes = await getRecipesByNutrients();
         console.log({updatedRecipes});
         this.setState({ datarecept: updatedRecipes });
+        GetDailyRecipes(this.state.kcalInput, this.state.proteinInput);
 
         event.preventDefault();
     }

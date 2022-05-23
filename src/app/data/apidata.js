@@ -1,4 +1,4 @@
-const url = "https://localhost:7257/api/recipes";
+const url = "https://localhost:7257/api/recipes/";
 const apiKey = "apiKey=1c2c8e8baba1425a9ce29512cf79c67b";
 
 export async function getRecipesByNutrients(proteinInput, kcalInput) {
@@ -9,7 +9,7 @@ export async function getRecipesByNutrients(proteinInput, kcalInput) {
 };
 
 export async function getDataRecipeInformation(id) {
-    const response = await fetch(url + id + "/information?" + apiKey + "&includeNutrition=false");
+    const response = await fetch(url + id);
     const data = await response.json();
     console.log(data);
     return data;

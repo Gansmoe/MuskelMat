@@ -20,5 +20,13 @@ namespace MuskelMat_backend.Controllers
             var recipes = await _recipesRepository.AllRecipesListAsync();
             return Ok(recipes);
         }
+
+        [HttpGet("{Id}")]
+        public async Task<ActionResult<Recipes>> GetRecipe(int id)
+        {
+            var recipe = await _recipesRepository.RecipeAsync(id);
+
+            return Ok(recipe);
+        }
     }
 }

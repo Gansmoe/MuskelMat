@@ -12,40 +12,43 @@ import SavedRecipes from "./routes/savedrecipes";
 import WeeklyMenu from "./routes/weeklymenu";
 import CalculateMenu from './routes/CalculateMenu';
 import LogIn from './components/LogIn.jsx';
+import ErrorBoundary from './components/ErrorBoundary'
 
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
     <>
-    <HashRouter>
-        <Routes>
-            <Route path="/" element={<App />}>
-                <Route path="contact" element={<Contact />} />
-                <Route path="recipes" element={<Recipes />}>
-                    <Route
-                        index
-                        element={
-                            <main style={{ padding: "1rem" }}>
-                                <h2>Välj ett recept!</h2>
-                            </main>
-                        }
-                    />
-                    <Route path=":recipeId" element={<Recipe />} />
-                </Route>
-                <Route path="savedrecipes" element={<SavedRecipes />} />
-                <Route path="weeklymenu" element={<WeeklyMenu />} />
-                <Route path="calculatemenu" element={<CalculateMenu />} />
-                <Route
-                    path="*"
-                    element={
-                        <main style={{ padding: "1rem" }}>
-                            <p>Här var det tomt!</p>
-                        </main>
-                    }
-                />
-            </Route>
-        </Routes>
-    </HashRouter>
+        <HashRouter>
+            <ErrorBoundary>
+                <Routes>
+                    <Route path="/" element={<App />}>
+                        <Route path="contact" element={<Contact />} />
+                        <Route path="recipes" element={<Recipes />}>
+                            <Route
+                                index
+                                element={
+                                    <main style={{ padding: "1rem" }}>
+                                        <h2>Välj ett recept!</h2>
+                                    </main>
+                                }
+                            />
+                            <Route path=":recipeId" element={<Recipe />} />
+                        </Route>
+                        <Route path="savedrecipes" element={<SavedRecipes />} />
+                        <Route path="weeklymenu" element={<WeeklyMenu />} />
+                        <Route path="calculatemenu" element={<CalculateMenu />} />
+                        <Route
+                            path="*"
+                            element={
+                                <main style={{ padding: "1rem" }}>
+                                    <p>Här var det tomt!</p>
+                                </main>
+                            }
+                        />
+                    </Route>
+                </Routes>
+            </ErrorBoundary>
+        </HashRouter>
     </>
 )
