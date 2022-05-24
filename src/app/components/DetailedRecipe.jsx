@@ -11,6 +11,7 @@ export default class DetailedRecipe extends React.Component {
             recipe: [],
             done: false,
             savedWeeklyRecipes: [],
+            error: null,
         }
     }
 
@@ -37,26 +38,35 @@ export default class DetailedRecipe extends React.Component {
     }
 
     recipeInfo = async () => {
-        const data = await getDataRecipeInformation(this.props.recipeId);
-        this.setState({ recipe: data }, async () => this.setState({ done: true }));
+        const [data, err] = await getDataRecipeInformation(this.props.recipeId);
+        console.log(data);
+        this.setState({ recipe: data, error: err }, async () => this.setState({ done: true }));
     }
 
     render() {
+        console.log(this.state);
         return (
             <div className="detailedRecipe" key={this.props.recipeId}>
                 <div className="dropDown">
-                    {(this.state.done === false)
-                        ?
-                        <h4>Laddar...</h4>
-                        :
-                        <>
-                            <h4>Ingredienser: </h4>
-                            {this.state.recipe.ingredients.map((ingredients) => (
-                                <p key={ingredients.id}>{ingredients.name}</p>
-                            ))}
-                        </>
+                    {(this.state.done == false)
+                    ?
+                    <h4>Laddar...</h4>
+                    :
+                    <>
+                        {(this.state.error === null)
+                            ?
+                            <>
+                                <h4>Ingredienser: </h4>
+                                {this.state.recipe.ingredients.map((ingredients) => (
+                                    <p key={ingredients.id}>{ingredients.name}</p>
+                                ))}
+                            </>
+                            :
+                            <p>Någonting gick fel!</p>
+                        }
+                    
+                    </>
                     }
-
                 </div>
             </div>
 

@@ -2,7 +2,7 @@ import { getRecipesByNutrients } from "./apidata";
 
 export async function GetDailyRecipes(kcalInput, proteinInput) {
 
-    const allRecipes = await getRecipesByNutrients();
+    const [allRecipes, err] = await getRecipesByNutrients();
     const allBreakfasts = [];
     const allDinners = [];
     const allSnacks = [];
@@ -22,19 +22,19 @@ export async function GetDailyRecipes(kcalInput, proteinInput) {
     }
 
     for(let i = 0; i<allBreakfasts.length; i++){
-        if(allBreakfasts[i].kcal < kcalInput*0.2 && allBreakfasts[i].protein < proteinInput*0.2 && dailyMenu.length === 0){
+        if(allBreakfasts[i].kcal < kcalInput*0.2 && allBreakfasts[i].protein > proteinInput*0.2 && dailyMenu.length === 0){
             dailyMenu.push(allBreakfasts[i]);
         }  
     }
 
     for(let i = 0; i<allDinners.length; i++){
-        if(allDinners[i].kcal < kcalInput*0.3 && allDinners[i].protein < proteinInput*0.3 && dailyMenu.length < 3){
+        if(allDinners[i].kcal < kcalInput*0.3 && allDinners[i].protein > proteinInput*0.3 && dailyMenu.length < 3){
             dailyMenu.push(allDinners[i]);
         }
     }
 
     for(let i = 0; i<allSnacks.length; i++){
-        if(allSnacks[i].kcal < kcalInput*0.2 && allSnacks[i].protein < proteinInput*0.2 && dailyMenu.length < 5){
+        if(allSnacks[i].kcal < kcalInput*0.2 && allSnacks[i].protein > proteinInput*0.2 && dailyMenu.length < 5){
             dailyMenu.push(allSnacks[i]);
         }
     }

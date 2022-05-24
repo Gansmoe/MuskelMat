@@ -15,7 +15,7 @@ Nummer	Max.Poäng	Kriterium	Beskrivning	Läranderesultat
 
 4	6	2	Paketet Prop-Types ska vara installerat och användas i applikationen på minst 4 st av dina egna komponenter - välj de mest relevanta.
 
-            3/4 KVAR
+            KLAR!
 
 5	10	2	En av dina nya komponenter ska vara en generellt återanvändningsbar komponent som är enkel att återanvända i en annan applikation med viss avancerad funktionalitet. Komponentens kod ska vara dokumenterad.
 
@@ -32,4 +32,9 @@ Nummer	Max.Poäng	Kriterium	Beskrivning	Läranderesultat
 8	10	7	Kommunikationen med REST-API:et ska implementerat väl avgränsad från UI-logiken (komponenter) och nyttja lämplig felhantering för om API:et inte är tillgänglig eller ger ett oväntat svar.
 
             KVAR: FELHANTERING FRÅN API!
+ 
+
+ isAdmin: true/false
+ login-knapp
+ logout-knapp
  

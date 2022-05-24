@@ -12,6 +12,8 @@ export default class CalculateMenu extends React.Component {
             kcalInput: 0,
             proteinInput: 0,
             datarecept: [],
+            error: null,
+            updatedRecipesDone: false,
         }
 
     }
@@ -20,9 +22,10 @@ export default class CalculateMenu extends React.Component {
 
     handleSubmit = async (event) => {
         console.log("Hejhej från submit");
-        const updatedRecipes = await getRecipesByNutrients();
-        console.log({updatedRecipes});
-        this.setState({ datarecept: updatedRecipes });
+        const [updatedRecipes, err] = await getRecipesByNutrients();
+        console.log({ updatedRecipes });
+        this.setState({ datarecept: updatedRecipes, updatedRecipesDone: true });
+        this.setState({ error: err });
         GetDailyRecipes(this.state.kcalInput, this.state.proteinInput);
 
         event.preventDefault();
@@ -47,14 +50,26 @@ export default class CalculateMenu extends React.Component {
                     <input type="number" placeholder="Protein/dag" value={this.state.proteinInput} onChange={this.handleChangeProtein}></input>
                     <input type="submit" value="Kör!" />
                 </form>
-                {(this.state.datarecept.length === 0)
+                {(this.state.updatedRecipesDone === false)
                     ?
                     <div><h3 >Fyll i kalori- och proteinbehov för att få fram recept</h3></div>
                     :
+
                     <>
-                        {this.state.datarecept.map((recipe) => (
-                            <WriteRecipes key={recipe.recipesId} recipes={recipe} />
-                        ))}
+                        {(this.state.error === null)
+                            ?
+                            <>
+                            {
+                                this.state.datarecept.map((recipe) => (
+                                    <WriteRecipes key={recipe.recipesId} recipes={recipe} />
+                                ))
+                            }
+                            </>
+                            :
+                            <p>HEHE FUNKA INTE</p>
+
+                        }
+
 
                     </>
                 }

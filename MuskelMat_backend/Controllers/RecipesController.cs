@@ -18,6 +18,10 @@ namespace MuskelMat_backend.Controllers
         public async Task<ActionResult<IEnumerable<Recipes>>> GetAllAsync()
         {
             var recipes = await _recipesRepository.AllRecipesListAsync();
+            if (recipes == null)
+            {
+                return NotFound();
+            }
             return Ok(recipes);
         }
 
@@ -25,6 +29,11 @@ namespace MuskelMat_backend.Controllers
         public async Task<ActionResult<Recipes>> GetRecipe(int id)
         {
             var recipe = await _recipesRepository.RecipeAsync(id);
+
+            if (recipe == null)
+            {
+                return NotFound();
+            }
 
             return Ok(recipe);
         }

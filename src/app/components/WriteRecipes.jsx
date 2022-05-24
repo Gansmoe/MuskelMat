@@ -36,9 +36,7 @@ export default class WriteRecipes extends React.Component {
                 <p>Protein per portion: {this.props.recipes.protein}</p>        
                 {(this.state.show === true)
                     ?
-                    <>
                         <DetailedRecipe recipeId={this.props.recipes.recipesId} />
-                    </>
                     :
                     <p></p>
                 }
