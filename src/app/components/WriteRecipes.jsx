@@ -2,6 +2,8 @@ import React from "react";
 import DetailedRecipe from "./DetailedRecipe";
 import { getDataRecipeInformation } from "../data/apidata";
 import ReadMoreButton from "./ReadMoreButton";
+import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
 
 export default class WriteRecipes extends React.Component {
@@ -31,9 +33,7 @@ export default class WriteRecipes extends React.Component {
             <div className="writeRecipe" key={this.props.recipes.recipesId}><h4>{this.props.recipes.name}</h4>
                 <img src={this.props.recipes.image} alt=""></img>
                 <p>Kalorier per portion: {this.props.recipes.kcal}</p>
-                <p>Protein per portion: {this.props.recipes.protein}</p>
-                {/* <button onClick={() => this.setState({ show: true })}>Läs mer</button> */}
-                
+                <p>Protein per portion: {this.props.recipes.protein}</p>        
                 {(this.state.show === true)
                     ?
                     <>
@@ -48,4 +48,8 @@ export default class WriteRecipes extends React.Component {
 
         )
     }
+}
+
+WriteRecipes.propTypes = {
+    recipes: PropTypes.object
 }

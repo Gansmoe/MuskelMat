@@ -2,7 +2,6 @@
 import React from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import bild from "../../assets/MuskelMat2.png";
-import CookieConsent from "react-cookie-consent";
 import LogIn from "./components/LogIn.jsx";
 import Footer from "./components/Footer.jsx"
 
@@ -40,9 +39,7 @@ export default function App() {
           <Outlet />          
         </>
         :
-
         <LogIn />
-
       }
       <Footer />
     </>

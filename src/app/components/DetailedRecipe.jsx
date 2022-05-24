@@ -1,6 +1,7 @@
 import React from "react";
 import { getDataRecipeInformation } from "../data/apidata";
 import SavedRecipes from "../routes/savedrecipes";
+import PropTypes from "prop-types";
 
 
 export default class DetailedRecipe extends React.Component {
@@ -51,7 +52,7 @@ export default class DetailedRecipe extends React.Component {
                         <>
                             <h4>Ingredienser: </h4>
                             {this.state.recipe.ingredients.map((ingredients) => (
-                                <p>{ingredients.name}</p>
+                                <p key={ingredients.id}>{ingredients.name}</p>
                             ))}
                         </>
                     }
@@ -62,4 +63,8 @@ export default class DetailedRecipe extends React.Component {
 
         )
     }
+}
+
+DetailedRecipe.propTypes = {
+    recipeId: PropTypes.number
 }

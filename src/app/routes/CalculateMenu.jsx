@@ -1,5 +1,5 @@
 import React from "react";
-import WriteRecipes from "../components/WriteRecipes";
+import WriteRecipes from "../components/WriteRecipes.jsx";
 import { getRecipesByNutrients } from "../data/apidata";
 import { GetDailyRecipes } from "../data/MenuCalculator";
 
@@ -53,7 +53,7 @@ export default class CalculateMenu extends React.Component {
                     :
                     <>
                         {this.state.datarecept.map((recipe) => (
-                            <WriteRecipes recipes={recipe} />
+                            <WriteRecipes key={recipe.recipesId} recipes={recipe} />
                         ))}
 
                     </>

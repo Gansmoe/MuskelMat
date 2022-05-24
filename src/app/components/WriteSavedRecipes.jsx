@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 
-export default class WriteRecipes extends React.Component {
+export default class WriteSavedRecipes extends React.Component {
 
     render() {
         return (
@@ -10,4 +11,8 @@ export default class WriteRecipes extends React.Component {
             ))
         )
     }
+}
+
+WriteSavedRecipes.propTypes = {
+    recipes: PropTypes.array
 }

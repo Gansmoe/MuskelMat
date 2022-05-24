@@ -11,7 +11,6 @@ import Recipe from './routes/recipe';
 import SavedRecipes from "./routes/savedrecipes";
 import WeeklyMenu from "./routes/weeklymenu";
 import CalculateMenu from './routes/CalculateMenu';
-import LogIn from './components/LogIn.jsx';
 import ErrorBoundary from './components/ErrorBoundary'
 
 const container = document.getElementById("root");
