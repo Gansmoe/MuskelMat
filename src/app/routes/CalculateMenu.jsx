@@ -66,7 +66,7 @@ export default class CalculateMenu extends React.Component {
                                 }
                             </>
                             :
-                            <p>HEHE FUNKA INTE</p>
+                            <p>Någonting blev fel när recepten skulle hämtas</p>
 
                         }
 

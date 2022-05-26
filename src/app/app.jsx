@@ -15,7 +15,7 @@ let loggedIn = null;
 export const App = () => {
 
   const user = useContext(UserContext)
-
+  const isAdmin = true;
   const navigate = useNavigate();
 
   if (localStorage.getItem("loggedin")) {
@@ -37,7 +37,7 @@ export const App = () => {
               <Link className="link" to="/savedrecipes">Sparade Recept</Link>
               <Link className="link" to="/weeklymenu">Veckomatsedel</Link>
               <Link className="link" to="/calculatemenu">Få din Veckomatsedel</Link>
-              {(user.isAdmin === true)
+              {(isAdmin === true)
                 ?
                 <Link className="link" to="/addrecipe">Lägg till recept</Link>
                 :

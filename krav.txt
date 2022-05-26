@@ -3,11 +3,11 @@ Nummer	Max.Poäng	Kriterium	Beskrivning	Läranderesultat
 1	5		Ditt inlämnade arbete ska fortsätta från samma källkodsprojekt (repo) som tidigare inlämningsuppgifter. 
             app.html ska vara uppdaterad med din vidareutvecklade prototyp och readme.md ska uppdateras efter behov för att kunna starta och testa applikationen.
 
-            KVAR: UPPDATERA README
+            KLAR!
 
 2	6	1	Källkoden ska bestå av minst 15 React komponenter du skrivit själv med hjälp av JSX.
 
-            KVAR: KLAR?
+            KLAR!
 
 3	8	2	En av dina React komponenter ska vara en "Error Boundry"-komponent, som används korrekt i komponent-trädet.
 
@@ -15,19 +15,20 @@ Nummer	Max.Poäng	Kriterium	Beskrivning	Läranderesultat
 
 4	6	2	Paketet Prop-Types ska vara installerat och användas i applikationen på minst 4 st av dina egna komponenter - välj de mest relevanta.
 
+            Används bara på 3 ställen 
             KLAR!
 
 5	10	2	En av dina nya komponenter ska vara en generellt återanvändningsbar komponent som är enkel att återanvända i en annan applikation med viss avancerad funktionalitet. Komponentens kod ska vara dokumenterad.
 
-            KVAR: DOKUMENTERA KODEN.
+            KLAR!
 
 6	10	2	Antigen Redux eller Reacts Context-API ska användas för att skapa ett gemensamt tillstånd mellan flera olika komponenter oberoende deras placering i React-trädet.
 
-            EJ KLAR.
+            KLAR!
 
 7	5	2	Din applikation ska vid användning på minst fyra tillfällen använda sig av server kommunikation med ett REST API.
 
-            KVAR: ANVÄNDER BARA 2 KOMMUNIKATIONTILLFÄLLEN
+            KVAR: ANVÄNDER BARA 1 KOMMUNIKATIONTILLFÄLLEN
 
 8	10	7	Kommunikationen med REST-API:et ska implementerat väl avgränsad från UI-logiken (komponenter) och nyttja lämplig felhantering för om API:et inte är tillgänglig eller ger ett oväntat svar.
 

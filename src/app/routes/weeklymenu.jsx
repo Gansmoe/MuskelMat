@@ -9,9 +9,9 @@ export default class WeeklyMenu extends React.Component {
         }
     }
 
-        componentDidMount() {
-            this.setState({savedWeeklyRecipes: JSON.parse(localStorage.getItem("Saved weekly recipes"))})
-        }
+    componentDidMount() {
+        this.setState({ savedWeeklyRecipes: JSON.parse(localStorage.getItem("Saved weekly recipes")) })
+    }
 
     render() {
         return (
@@ -21,7 +21,12 @@ export default class WeeklyMenu extends React.Component {
                     ?
                     <p>Här var det tomt! Gå till <b>Få din Veckomatsedel</b> för att fylla på här!</p>
                     :
-                    <><WriteRecipes recipes={this.state.savedWeeklyRecipes}/></>}
+                    <>
+                        {this.state.savedWeeklyRecipes.map((recipe) => (
+                            <WriteRecipes key={recipe.recipesId} recipes={recipe} />
+                        ))
+                        }</>}
+
             </main>
         );
     }

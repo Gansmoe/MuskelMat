@@ -67,7 +67,7 @@ export default class DetailedRecipe extends React.Component {
                                 ))}
                                 {(this.context.user.isAdmin === true)
                                 ?
-                                <button>Redigera</button>
+                                <button onClick={this.saveRecipe}>Spara</button>
                                 :
                                 <p></p>
                                 }
