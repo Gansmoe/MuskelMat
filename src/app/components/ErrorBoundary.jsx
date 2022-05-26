@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -18,7 +18,10 @@ export default class ErrorBoundary extends React.Component {
         <>
           <h1>Någonting gick fel.</h1>
           <Link to="/">
-          <button onClick={()=> this.setState({hasError: false})}>Gå tillbaka</button>
+            <button onClick={() => this.setState({ hasError: false })}>Gå tillbaka</button>
+          </Link>
+          <Link to="contact">
+            <button onClick={() => this.setState({ hasError: false })}>Till kontakt</button>
           </Link>
 
         </>);
