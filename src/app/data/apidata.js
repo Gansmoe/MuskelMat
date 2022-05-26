@@ -1,4 +1,5 @@
 const recipeUrl = "https://localhost:7257/api/recipes/";
+const recipeUrlTest= "https://localhost:7257/api/recipes"
 const apiKey = "apiKey=1c2c8e8baba1425a9ce29512cf79c67b";
 
 export async function getRecipesByNutrients() {
@@ -14,7 +15,7 @@ export async function getRecipesByNutrients() {
     }
 };
 
-export async function getDataRecipeInformation(id) {
+export async function getRecipeById(id) {
     try {
         const response = await fetch(recipeUrl + id);
         const data = await response.json();
@@ -30,7 +31,8 @@ export async function getDataRecipeInformation(id) {
 
 export async function addRecipe(name, kcal, protein, mealType) {
     try {
-        const response = await fetch(recipeUrl, {
+        
+        const response = await fetch(recipeUrlTest, {
             method: 'POST',
             body: JSON.stringify({
                 Name: name,
@@ -39,7 +41,8 @@ export async function addRecipe(name, kcal, protein, mealType) {
                 MealType: mealType
             }),
             headers: {
-                'Content-Type': 'application/json; charset=UTF-8',
+                'Content-type': 'application/json; charset=utf-8',
+                'Accept': '*/*'
             },
         });
         const data = await response.json();
@@ -48,7 +51,7 @@ export async function addRecipe(name, kcal, protein, mealType) {
     }
     catch (err) {
 
-        return [[], err];
+        return [null, err];
 
     }
 }
