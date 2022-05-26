@@ -13,7 +13,17 @@ namespace MuskelMat_backend.Models
 
         public async Task<IEnumerable<Ingredients>> AllIngredientsListAsync()
         {
-                return await _appDbContext.Ingredients.ToListAsync();
+            return await _appDbContext.Ingredients.ToListAsync();
+        }
+
+        public void Add<T>(T entity) where T : class
+        {
+            _appDbContext.Add(entity);
+        }
+
+        public async Task<bool> SaveChangesAsync()
+        {
+            return (await _appDbContext.SaveChangesAsync()) > 0;
         }
     }
 }

@@ -31,10 +31,27 @@ Nummer	Max.Poäng	Kriterium	Beskrivning	Läranderesultat
 
 8	10	7	Kommunikationen med REST-API:et ska implementerat väl avgränsad från UI-logiken (komponenter) och nyttja lämplig felhantering för om API:et inte är tillgänglig eller ger ett oväntat svar.
 
-            KVAR: FELHANTERING FRÅN API!
+            KLAR!
  
 
  isAdmin: true/false
  login-knapp
  logout-knapp
  
+
+
+         {
+            "id": 104,
+            "recipesId": 26,
+            "name": "Kyckling"
+        },
+        {
+            "id": 105,
+            "recipesId": 26,
+            "name": "Ris"
+        },
+        {
+            "id": 106,
+            "recipesId": 26,
+            "name": "Curry"
+        }

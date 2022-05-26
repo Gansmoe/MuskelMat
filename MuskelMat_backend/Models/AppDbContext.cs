@@ -17,6 +17,8 @@ namespace MuskelMat_backend.Models
         {
             base.OnModelCreating(builder);
 
+            builder.Entity<Recipes>().HasMany<Ingredients>(e => e.Ingredients);
+
             builder.Entity<Recipes>().HasData(new Recipes
             {
                 RecipesId = 1,

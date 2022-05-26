@@ -4,7 +4,7 @@
 
 namespace MuskelMat_backend.Migrations
 {
-    public partial class NewData : Migration
+    public partial class InitalMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -1,6 +1,7 @@
 import React from "react";
 import { getDataRecipeInformation } from "../data/apidata";
 import SavedRecipes from "../routes/savedrecipes";
+import UserContext, { UserConsumer } from "../context/UserContext.js";
 import PropTypes from "prop-types";
 
 
@@ -14,6 +15,8 @@ export default class DetailedRecipe extends React.Component {
             error: null,
         }
     }
+
+    static contextType = UserContext;
 
     saveRecipe = () => {
         console.log("Kör saveRecipe");
@@ -34,6 +37,8 @@ export default class DetailedRecipe extends React.Component {
     }
 
     componentDidMount() {
+        const user = this.context;
+        console.log(user);
         this.recipeInfo();
     }
 
@@ -60,11 +65,16 @@ export default class DetailedRecipe extends React.Component {
                                 {this.state.recipe.ingredients.map((ingredients) => (
                                     <p key={ingredients.id}>{ingredients.name}</p>
                                 ))}
+                                {(this.context.user.isAdmin === true)
+                                ?
+                                <button>Redigera</button>
+                                :
+                                <p></p>
+                                }
                             </>
                             :
                             <p>Någonting gick fel!</p>
                         }
-                    
                     </>
                     }
                 </div>

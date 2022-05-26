@@ -25,7 +25,6 @@ export default function Recipes() {
             }
           }}
         />
-
         {recipes
           .filter((recipe) => {
             let filter = searchParams.get("filter");

@@ -8,7 +8,7 @@ export async function getRecipesByNutrients() {
         console.log(data);
         return [data, null];
     }
-    catch(err) {
+    catch (err) {
 
         return [[], err];
 
@@ -22,10 +22,23 @@ export async function getDataRecipeInformation(id) {
         console.log(data);
         return [data, null];
     }
-    catch(err) {
+    catch (err) {
 
         return [[], err];
 
     }
-
 };
+
+export async function changeRecipe(id) {
+    try {
+        const response = await fetch(url + id);
+        const data = await response.json();
+        console.log(data);
+        return [data, null];
+    }
+    catch (err) {
+
+        return [[], err];
+
+    }
+}
