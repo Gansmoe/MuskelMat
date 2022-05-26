@@ -9,7 +9,6 @@ import propTypes from "prop-types";
 export default class WriteRecipes extends React.Component {
     constructor(props) {
         super(props);
-        this.eventHandler = this.eventHandler.bind(this);
         this.state = {
             show: false,
             status: "Läs mer"

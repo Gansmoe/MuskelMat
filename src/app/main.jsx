@@ -4,7 +4,7 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
-import App from './app.jsx';
+import { App } from './app';
 import Contact from "./routes/contact";
 import Recipes from "./routes/recipes";
 import Recipe from './routes/recipe';
@@ -12,6 +12,7 @@ import SavedRecipes from "./routes/savedrecipes";
 import WeeklyMenu from "./routes/weeklymenu";
 import CalculateMenu from './routes/CalculateMenu';
 import ErrorBoundary from './components/ErrorBoundary'
+import AddRecipes from './components/AddRecipes.jsx';
 import { UserProvider } from './context/UserContext.js';
 
 const container = document.getElementById("root");
@@ -38,6 +39,7 @@ root.render(
                             </Route>
                             <Route path="savedrecipes" element={<SavedRecipes />} />
                             <Route path="weeklymenu" element={<WeeklyMenu />} />
+                            <Route path="addrecipe" element={<AddRecipes/>} />
                             <Route path="calculatemenu" element={<CalculateMenu />} />
                             <Route
                                 path="*"
