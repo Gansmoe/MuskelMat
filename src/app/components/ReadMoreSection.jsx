@@ -2,8 +2,8 @@ import React, { Children } from "react";
 import PropTypes from "prop-types";
 import propTypes from "prop-types";
 
-//Denna komponent renderar sina barn om man klickar på knappen. När knappen klickas på ändras this.state.show till true
-// och en conditional rendering visar det barnet som finns.
+/**Denna komponent renderar sina barn om man klickar på knappen. När knappen klickas på ändras this.state.show till true
+och en conditional rendering visar det barnet som finns.*/
 export default class ReadMoreSection extends React.Component {
 
     constructor(props) {

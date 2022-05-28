@@ -5,7 +5,11 @@ const UserContext = React.createContext()
 class UserProvider extends Component {
   // Context state
   state = {
-    user: {},
+    user: {
+      name: "",
+      isAdmin: false,
+    },
+    isLoading: true,
   }
 
   // Method to update state
@@ -13,11 +17,20 @@ class UserProvider extends Component {
     this.setState((prevState) => ({ user }))
   }
 
+  componentDidMount() {
+    this.setState(prevState => {
+      let user = Object.assign({}, prevState.user);
+      user.isAdmin = JSON.parse(localStorage.getItem("isAdmin"));
+      return { user };
+    }, () => this.setState({ isLoading: false }))
+  }
+
+
   render() {
-    const { children } = this.props
+    /* const { children } = this.props */
     const { user } = this.state
     const { setUser } = this
-
+    console.log(this.state);
     return (
       <UserContext.Provider
         value={{
@@ -25,7 +38,14 @@ class UserProvider extends Component {
           setUser,
         }}
       >
-        {children}
+      {(this.state.isLoading === true)
+      ?
+      <p>Laddar</p>
+      :
+      <>
+      {this.props.children}
+      </>
+      }
       </UserContext.Provider>
     )
   }

@@ -20,7 +20,8 @@ export default class ErrorBoundary extends React.Component {
           <Link to="/">
             <button onClick={() => this.setState({ hasError: false })}>Gå tillbaka</button>
           </Link>
-          <Link to="contact">
+          <h4>Om felet uppstår flera gånger kan du maila oss istället.</h4>
+          <Link to="/contact">
             <button onClick={() => this.setState({ hasError: false })}>Till kontakt</button>
           </Link>
 

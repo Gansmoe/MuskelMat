@@ -6,6 +6,7 @@ using AutoMapper;
 
 namespace MuskelMat_backend.Controllers
 {
+    [ApiController]
     [Route("api/recipes")]
     public class RecipesController : Controller
     {

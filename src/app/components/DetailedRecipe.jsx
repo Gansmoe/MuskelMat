@@ -1,5 +1,5 @@
 import React from "react";
-import { getDataRecipeInformation } from "../data/apidata";
+import { getDataRecipeInformation, getRecipeById } from "../data/apidata";
 import SavedRecipes from "../routes/savedrecipes";
 import UserContext, { UserConsumer } from "../context/UserContext.js";
 import PropTypes from "prop-types";
@@ -43,7 +43,7 @@ export default class DetailedRecipe extends React.Component {
     }
 
     recipeInfo = async () => {
-        const [data, err] = await getDataRecipeInformation(this.props.recipeId);
+        const [data, err] = await getRecipeById(this.props.recipeId);
         console.log(data);
         this.setState({ recipe: data, error: err }, async () => this.setState({ done: true }));
     }
@@ -61,6 +61,7 @@ export default class DetailedRecipe extends React.Component {
                         {(this.state.error === null)
                             ?
                             <>
+                            <h5>{this.state.recipe.mealType}</h5>
                                 <h4>Ingredienser: </h4>
                                 {this.state.recipe.ingredients.map((ingredients) => (
                                     <p key={ingredients.id}>{ingredients.name}</p>

@@ -66,7 +66,7 @@ export default class CalculateMenu extends React.Component {
                                 }
                             </>
                             :
-                            <p>Någonting blev fel när recepten skulle hämtas</p>
+                            <p>Någonting blev fel när recepten skulle hämtas, försök igen eller skicka ett meddelande till hjälp@muskelmat.se</p>
 
                         }
 

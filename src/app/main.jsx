@@ -14,15 +14,17 @@ import CalculateMenu from './routes/CalculateMenu';
 import ErrorBoundary from './components/ErrorBoundary'
 import AddRecipes from './components/AddRecipes.jsx';
 import { UserProvider } from './context/UserContext.js';
+import ShoppingList from './components/ShoppingList';
 
 const container = document.getElementById("root");
 const root = createRoot(container);
+const user = { name: "User", isAdmin: false }
 
 root.render(
     <>
         <HashRouter>
             <ErrorBoundary>
-                <UserProvider>
+                <UserProvider value={user}>
                     <Routes>
                         <Route path="/" element={<App />}>
                             <Route path="contact" element={<Contact />} />
@@ -39,7 +41,8 @@ root.render(
                             </Route>
                             <Route path="savedrecipes" element={<SavedRecipes />} />
                             <Route path="weeklymenu" element={<WeeklyMenu />} />
-                            <Route path="addrecipe" element={<AddRecipes/>} />
+                            <Route path="addrecipe" element={<AddRecipes />} />
+                            <Route path='shoppinglist' element={<ShoppingList />} />
                             <Route path="calculatemenu" element={<CalculateMenu />} />
                             <Route
                                 path="*"
