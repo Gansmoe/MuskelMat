@@ -10,8 +10,12 @@ namespace MuskelMat_backend.Models
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) => this.Database.EnsureCreated();
 
+
+        // Change this to your filepath for database.
         protected override void OnConfiguring(DbContextOptionsBuilder options)
     => options.UseSqlite(@"Data Source=C:\Users\Isac\Documents\Skola\Moderna Webbsystem\Submits\MuskelMat\MuskelMat_backend\DB\app.db");
+
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
