@@ -1,0 +1,11 @@
+C:\Users\Isac\Documents\Skola\Moderna Webbsystem\Submits\MuskelMat\MuskelMat_backend\bin\Debug\net6.0\publish\MuskelMat_backend.exe
+C:\Users\Isac\Documents\Skola\Moderna Webbsystem\Submits\MuskelMat\MuskelMat_backend\bin\Debug\net6.0\publish\appsettings.Development.json
+C:\Users\Isac\Documents\Skola\Moderna Webbsystem\Submits\MuskelMat\MuskelMat_backend\bin\Debug\net6.0\publish\appsettings.json
+C:\Users\Isac\Documents\Skola\Moderna Webbsystem\Submits\MuskelMat\MuskelMat_backend\bin\Debug\net6.0\publish\MuskelMat_backend.dll
+C:\Users\Isac\Documents\Skola\Moderna Webbsystem\Submits\MuskelMat\MuskelMat_backend\bin\Debug\net6.0\publish\MuskelMat_backend.deps.json
+C:\Users\Isac\Documents\Skola\Moderna Webbsystem\Submits\MuskelMat\MuskelMat_backend\bin\Debug\net6.0\publish\MuskelMat_backend.runtimeconfig.json
+C:\Users\Isac\Documents\Skola\Moderna Webbsystem\Submits\MuskelMat\MuskelMat_backend\bin\Debug\net6.0\publish\MuskelMat_backend.pdb
+C:\Users\Isac\Documents\Skola\Moderna Webbsystem\Submits\MuskelMat\MuskelMat_backend\bin\Debug\net6.0\publish\Microsoft.OpenApi.dll
+C:\Users\Isac\Documents\Skola\Moderna Webbsystem\Submits\MuskelMat\MuskelMat_backend\bin\Debug\net6.0\publish\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Isac\Documents\Skola\Moderna Webbsystem\Submits\MuskelMat\MuskelMat_backend\bin\Debug\net6.0\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Isac\Documents\Skola\Moderna Webbsystem\Submits\MuskelMat\MuskelMat_backend\bin\Debug\net6.0\publish\Swashbuckle.AspNetCore.SwaggerUI.dll

@@ -8,9 +8,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-
 #root {
     background-color: rgba(255, 255, 255, 0.589);
     display: flex;
@@ -98,8 +95,23 @@ header {
 }
 
 .detailedRecipe {
+    max-height: 0;
+    height: 0%;
     max-width: 25rem;
+    border: 3px #333 solid;
+    padding: 10px;
+    animation: detailedRecipeMove 1s ease-in forwards;
 }
+
+@keyframes detailedRecipeMove {
+    from {opacity: 0%;}
+
+    to {opacity: 100%;
+        max-height: 500px;}
+
+}
+
+
 
 .logIn {
     margin: auto;
@@ -127,6 +139,8 @@ header {
     border: 3px rgb(168, 10, 10) solid;
     border-radius: 3px;
 }
+
+
 
 
 /* On screens that are 992px or less, set the background color to blue */

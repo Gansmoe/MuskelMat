@@ -1,7 +1,7 @@
 
 
 
-export default class DataHandler {
+/* export default class DataHandler {
     
     getData = async () => {
         const response = await fetch("mockdata.json");
@@ -23,4 +23,4 @@ export default class DataHandler {
             (recipe) => recipe.protein === protein
         );
     }
-}
+} */

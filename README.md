@@ -11,7 +11,13 @@
 -> run 'npm ci' 
 
 ## Start
+### Start API
+-> In terminal, navigate to MuskelMat_backend-folder <br>
+-> run 'dotnet run'-command
 
+
+### To start app
+-> In terminal, navigate to MuskelMat-folder <br>
 -> run 'npm start' <br>
 -> your browser should open automatically <br>
 -> to get to app, click the 'App' button in index.html <br>

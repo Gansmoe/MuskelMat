@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from "../context/UserContext";
 
 export default class LogIn extends React.Component {
 
@@ -11,6 +12,8 @@ export default class LogIn extends React.Component {
         }
     }
 
+    static contextType = UserContext;
+
     handleChangeName = (event) => {
         this.setState({ username: event.target.value }, () => console.log(this.state.username));
     }
@@ -21,9 +24,24 @@ export default class LogIn extends React.Component {
 
 
     handleSubmit = () => {
+        const {setUser} = this.context;
         if (this.state.username === "User" && this.state.password === "Password") {
-            this.setState({ loggedin: true }, () => localStorage.setItem("loggedin", JSON.stringify(this.state.loggedin)))
+            this.setState({ loggedin: true }, () => {
+                localStorage.setItem("loggedin", JSON.stringify(this.state.loggedin))
+                localStorage.setItem("isAdmin", JSON.stringify(false))
+            });
+            const newUser = { name: this.state.username, isAdmin: false};
+            setUser(newUser);
         }
+        else if (this.state.username === "Admin" && this.state.password === "Password") {
+            this.setState({ loggedin: true}, () => {
+                localStorage.setItem("loggedin", JSON.stringify(this.state.loggedin))
+                localStorage.setItem("isAdmin", JSON.stringify(true))
+            });
+            const newUser = { name: this.state.username, isAdmin: true};
+            setUser(newUser);
+        }
+        
     }
 
     render() {

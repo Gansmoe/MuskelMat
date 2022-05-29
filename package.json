@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx parcel index.html --open",
+    "server": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +25,7 @@
     "react-router-dom": "^6.3.0"
   },
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react-cookie-consent": "^7.4.1"
   }
 }
