@@ -10,8 +10,8 @@ using MuskelMat_backend.Models;
 namespace MuskelMat_backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220525182203_InitalMigration")]
-    partial class InitalMigration
+    [Migration("20220529181700_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
