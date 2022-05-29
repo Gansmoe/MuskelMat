@@ -41,8 +41,7 @@ There is two logins. One for admin and one for regular user. The only difference
 
 If the database or API-calls isn't working it might be a problem with the database that comes with the repository. If this is the case you can try this:
 
--> Delete the app.db file in MuskelMat/MuskelMat_backend/DB.
--> In terminal run command *dotnet ef migrations remove*
--> In terminal run command *dotnet ef migrations add [migration-name]*
--> In terminal run command *dotnet ef database update*
-
+-> Delete the app.db file in MuskelMat/MuskelMat_backend/DB. <br>
+-> In terminal run command *dotnet ef migrations remove* <br>
+-> In terminal run command *dotnet ef migrations add [migration-name]* <br>
+-> In terminal run command *dotnet ef database update* <br>
